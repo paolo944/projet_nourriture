@@ -1,4 +1,4 @@
-import java.util.ArrayList
+import java.util.ArrayList;
 
 public class Etagere {
     private static ArrayList<Etagere> etagere = new ArrayList<Etagere>();
@@ -9,12 +9,12 @@ public class Etagere {
         this.poidsMax = poidsMax;
     }
 
-    public ArrayList<Etagere> getEtagere(){
+    public static ArrayList<Etagere> getEtagere(){
         //récupérer la référence du frigo et le manipuler dans le client
         return etagere;
     }
 
-    private double getPoids(){
+    private static double getPoids(){
         //avoir le poids pour les ajouts
         double poids = 0;
         for(int i=0; i<etagere.size(); i++){
@@ -23,7 +23,7 @@ public class Etagere {
         return poids;
     }
 
-    public boolean ajouterElem(Sec elem){
+    public static boolean ajouterElem(Sec elem){
         //ajouter un seul élément
         if(elem.getPoids()+getPoids() <= poidsMax) {
             etagere.add(elem);
@@ -32,7 +32,7 @@ public class Etagere {
         return false;
     }
 
-    public boolean ajouterListe(Sec[] elems){
+    public static boolean ajouterListe(Sec[] elems){
         //ajouter un liste d'élément
         double poidsTotal = 0;
         for(Sec elem: elems){
@@ -45,5 +45,17 @@ public class Etagere {
             return true;
         }
         return false;
+    }
+
+    public static String toString(){
+        String s = "Contenu de l'étagère";
+        for(Sec elem: etagere){
+            s += elem.toString()+"\n";
+        }
+        return s;
+    }
+
+    public static void afficher(){
+        System.out.print(toString);
     }
 }

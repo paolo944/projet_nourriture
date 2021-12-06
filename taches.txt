@@ -25,4 +25,12 @@ Classe Sec:
 
 Classe Test:
 
-Classe Marche:
+Classe Marché:
+
+Classe Viande:
+
+Classe Legume:
+
+Classe Fruits:
+
+Classe Gateau:
