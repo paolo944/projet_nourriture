@@ -1,40 +1,40 @@
-import java.util.ArrayList;
+import java.util.ArrayList
 
-public class Frigo {
-    private static ArrayList<Frigo> frigo = new ArrayList<Frigo>();
+public class Etagere {
+    private static ArrayList<Etagere> etagere = new ArrayList<Etagere>();
     private static double poidsMax;
 
-    public Frigo(double poidsMax){
+    public Etagere(double poidsMax){
         this.poidsMax = poidsMax;
     }
 
-    public ArrayList<Frigo> getFrigo(){
-        return frigo;
+    public ArrayList<Etagere> getEtagere(){
+        return etagere;
     }
 
     private double getPoids(){
         double poids = 0;
-        for(int i=0; i<frigo.size(); i++){
-            poids += frigo.get(i).getPoids();
+        for(int i=0; i<etagere.size(); i++){
+            poids += etagere.get(i).getPoids();
         }
         return poids;
     }
 
-    public boolean ajouterElem(Frais elem){
+    public boolean ajouterElem(Sec elem){
         if(elem.getPoids()+getPoids() <= poidsMax) {
-            frigo.add(elem);
+            etagere.add(elem);
             return true;
         }
         return false;
     }
 
-    public boolean ajouterListe(Frais[] elems){
+    public boolean ajouterListe(Sec[] elems){
         double poidsTotal = 0;
-        for(Frais elem: elems){
+        for(Sec elem: elems){
             poidsTotal += elem.getPoids();
         }
         if(poidsTotal <= poidsMax){
-            for(Frais elem: elems){
+            for(Sec elem: elems){
                 ajouterElem(elem);
             }
             return true;
