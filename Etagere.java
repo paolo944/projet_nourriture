@@ -5,14 +5,17 @@ public class Etagere {
     private static double poidsMax;
 
     public Etagere(double poidsMax){
+        //définir le poids maximal que l'étagère peut acceuillir
         this.poidsMax = poidsMax;
     }
 
     public ArrayList<Etagere> getEtagere(){
+        //récupérer la référence du frigo et le manipuler dans le client
         return etagere;
     }
 
     private double getPoids(){
+        //avoir le poids pour les ajouts
         double poids = 0;
         for(int i=0; i<etagere.size(); i++){
             poids += etagere.get(i).getPoids();
@@ -21,6 +24,7 @@ public class Etagere {
     }
 
     public boolean ajouterElem(Sec elem){
+        //ajouter un seul élément
         if(elem.getPoids()+getPoids() <= poidsMax) {
             etagere.add(elem);
             return true;
@@ -29,6 +33,7 @@ public class Etagere {
     }
 
     public boolean ajouterListe(Sec[] elems){
+        //ajouter un liste d'élément
         double poidsTotal = 0;
         for(Sec elem: elems){
             poidsTotal += elem.getPoids();

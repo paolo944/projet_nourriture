@@ -1,0 +1,28 @@
+//Une tâche par ligne et commentaire supplementaire sur la tâche avec // au début de ligne
+//Mettre O au début si c'es fait et mettre la date si possible et X sinon.
+
+Classe Frigo:
+O constructeur 06/12/2021
+O getteur 06/12/2021
+O ajout un seule élément 06/12/2021
+O ajout list d'élément 06/12/2021
+O getPoids 06/12/2021
+
+Classe Etagere:
+O constructeur 06/12/2021
+O getteur 06/12/2021
+O ajout un seule élément 06/12/2021
+O ajout list d'élément 06/12/2021
+O getPoids 06/12/2021
+
+Classe Nourriture:
+
+Classe Boisson:
+
+Classe Frais:
+
+Classe Sec:
+
+Classe Test:
+
+Classe Marche:
