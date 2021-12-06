@@ -1,3 +1,3 @@
-public interface class Frais{
+public interface Frais{
 
 }
