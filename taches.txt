@@ -33,4 +33,6 @@ Classe Legume:
 
 Classe Fruits:
 
+Class Cuisine:
+
 Classe Gateau:
