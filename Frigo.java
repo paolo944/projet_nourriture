@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Frigo {
-    private static ArrayList<Frigo> frigo = new ArrayList<Frigo>();
+    private static ArrayList<Frais> frigo = new ArrayList<Frais>();
     private static double poidsMax;
 
     public Frigo(double poidsMax){
@@ -9,7 +9,7 @@ public class Frigo {
         this.poidsMax = poidsMax;
     }
 
-    public ArrayList<Frigo> getFrigo(){
+    public ArrayList<Frais> getFrigo(){
         //récupérer la référence du frigo et le manipuler dans le client
         return frigo;
     }
@@ -45,5 +45,29 @@ public class Frigo {
             return true;
         }
         return false;
+    }
+    public boolean ajouterListe(ArrayList<Frais> elems){
+        //ajouter un liste d'élément
+        double poidsTotal = 0;
+        for(int i=0; i<elems.size(); i++){
+            poidsTotal += elems.get(i).getPoids();
+        }
+        if(poidsTotal <= poidsMax){
+            for(int i=0; i<elems.size(); i++){
+                ajouterElem(elems.get(i));
+            }
+            return true;
+        }
+        return false;
+    }
+    public Frigo clone(){
+        //Retourne un clone du frigo
+        Frigo frigoNouveau = new Frigo(poidsMax);
+        frigoNouveau.ajouterListe(frigo);
+        return frigoNouveau;
+    }
+
+    public void afficher(){
+        System.out.println(this.toString());
     }
 }
