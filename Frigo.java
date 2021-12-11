@@ -1,20 +1,17 @@
 import java.util.ArrayList;
 
 public class Frigo {
-    private static ArrayList<Frais> frigo = new ArrayList<Frais>();
-    private static double poidsMax;
+    private ArrayList<Frais> frigo = new ArrayList<Frais>();
+    private double poidsMax; //poids maximum que le frigo peut acceuillir
+    private static int compteur = 0; //Nombre de frigo instanciés
 
     public Frigo(double poidsMax){
         //définir le poids maximal que le frigo peut acceuillir
         this.poidsMax = poidsMax;
+        compteur++;
     }
 
-    public ArrayList<Frais> getFrigo(){
-        //récupérer la référence du frigo et le manipuler dans le client
-        return frigo;
-    }
-
-    private double getPoids(){
+    public double getPoids(){
         //avoir le poids pour les ajouts
         double poids = 0;
         for(int i=0; i<frigo.size(); i++){
@@ -46,6 +43,7 @@ public class Frigo {
         }
         return false;
     }
+
     public boolean ajouterListe(ArrayList<Frais> elems){
         //ajouter un liste d'élément
         double poidsTotal = 0;
@@ -60,9 +58,15 @@ public class Frigo {
         }
         return false;
     }
+
+    public static int getNombreFirgo(){
+        //Retourne le nombre de frigo
+        return compteur;
+    }
+
     public Frigo clone(){
         //Retourne un clone du frigo
-        Frigo frigoNouveau = new Frigo(poidsMax);
+        Frigo frigoNouveau = this(poidsMax);
         frigoNouveau.ajouterListe(frigo);
         return frigoNouveau;
     }
