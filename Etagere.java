@@ -26,7 +26,7 @@ public class Etagere {
     public boolean ajouterElem(Sec elem){
         //ajouter un seul élément
         if(elem.getPoids()+getPoids() <= poidsMax) {
-            etagere.add(elem);
+            etagere.add((Etagere) elem);
             return true;
         }
         return false;
