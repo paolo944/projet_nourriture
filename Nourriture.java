@@ -2,7 +2,6 @@ public abstract class Nourriture{
     private double poids;
     private String nom;
     private int quantites;
-    private double prix
 
     public Nourriture(double poids, String nom, int quantites){
         this.poids = poids;
