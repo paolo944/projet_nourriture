@@ -1,9 +1,16 @@
-public class Cuisine{
-    public Frigo[] frigos;
-    public Etagere[] etageres;
+import java.util.ArrayList; 
+class Cuisine{
 
-    public Cuisine(int frigos, int etageres) {
-        this.frigos = new Frigo[frigos];
-        this.etageres = new Etagere[etageres];
+    private static final Cuisine CuisineDuClient = new Cuisine();
+    public static ArrayList<Frigo> frigoList = new ArrayList<Frigo>();
+
+    public static ArrayList<Etagere> etagereList = new ArrayList<Etagere>();
+    
+    private Cuisine(){}
+    public static void  ajouterFrigo(Frigo frigo){
+        frigoList.add(frigo);
+    }
+    public static void  ajouterEtagere(Etagere etageR){
+        etagereList.add(etageR);
     }
 }

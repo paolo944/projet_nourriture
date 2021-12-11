@@ -26,7 +26,7 @@ public class Etagere {
     public boolean ajouterElem(Sec elem){
         //ajouter un seul élément
         if(elem.getPoids()+getPoids() <= poidsMax) {
-            etagere.add(elem);
+            etagere.add((Etagere) elem);
             return true;
         }
         return false;
@@ -64,13 +64,14 @@ public class Etagere {
 
     public String toString(){
         String s = "Contenu de l'étagère";
-        for(Sec elem: etagere){
+        for(Etagere elem: etagere){
             s += elem.toString()+"\n";
         }
         return s;
     }
 
-    public static void afficher(){
-        System.out.print(toString);
+    public void afficher(){
+        System.out.print(this.toString());
     }
+    
 }
