@@ -7,8 +7,8 @@ public class Menu {
         this.caloMenue=0;
         this.nomMenue=nomMenue;
     }
-    public ajouterMenu(Nourriture[] nourri,Boisson[] boisso){
-        this.nourituresTab=nourri;
+    public void ajouterMenu(Nourriture[] nourri,Boisson[] boisso){
+        this.nourrituresTab=nourri;
         this.boissonTab=boisso;
     }
     public String toString() {
