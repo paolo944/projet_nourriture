@@ -4,7 +4,7 @@ public class Boisson implements Frais {
     public String nom;
     public double poids;
     public double calories;
-    public Boisson(String nom, boolean gazeux, double litre,double calories){
+    public Boisson(String nom, boolean gazeux, double litre,double calories,Frigo f1){
         this.litre=litre;
         this.poids=litre;
         this.nom=nom;

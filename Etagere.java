@@ -73,4 +73,5 @@ public class Etagere {
     public void afficher(){
         System.out.print(this.toString());
     }
+    
 }
