@@ -70,7 +70,7 @@ public class Etagere {
         return s;
     }
 
-    public static void afficher(){
+    public void afficher(){
         System.out.print(this.toString());
     }
 }
