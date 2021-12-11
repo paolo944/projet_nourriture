@@ -1,20 +1,20 @@
 import java.util.ArrayList;
 
 public class Etagere {
-    private static ArrayList<Etagere> etagere = new ArrayList<Etagere>();
-    private static double poidsMax;
+    private ArrayList<Etagere> etagere = new ArrayList<Etagere>();
+    private double poidsMax;
 
     public Etagere(double poidsMax){
         //définir le poids maximal que l'étagère peut acceuillir
         this.poidsMax = poidsMax;
     }
 
-    public static ArrayList<Etagere> getEtagere(){
+    public ArrayList<Etagere> getEtagere(){
         //récupérer la référence du frigo et le manipuler dans le client
         return etagere;
     }
 
-    private static double getPoids(){
+    private double getPoids(){
         //avoir le poids pour les ajouts
         double poids = 0;
         for(int i=0; i<etagere.size(); i++){
@@ -23,7 +23,7 @@ public class Etagere {
         return poids;
     }
 
-    public static boolean ajouterElem(Sec elem){
+    public boolean ajouterElem(Sec elem){
         //ajouter un seul élément
         if(elem.getPoids()+getPoids() <= poidsMax) {
             etagere.add(elem);
@@ -32,7 +32,7 @@ public class Etagere {
         return false;
     }
 
-    public static boolean ajouterListe(Sec[] elems){
+    public boolean ajouterListe(Sec[] elems){
         //ajouter un liste d'élément
         double poidsTotal = 0;
         for(Sec elem: elems){
@@ -47,15 +47,30 @@ public class Etagere {
         return false;
     }
 
-    public static String toString(){
+    public boolean ajouterListe(ArrayList<Sec> elems){
+        //ajouter un liste d'élément
+        double poidsTotal = 0;
+        for(int i=0; i<elems.size(); i++){
+            poidsTotal += elems.get(i).getPoids();
+        }
+        if(poidsTotal <= poidsMax){
+            for(int i=0; i<elems.size(); i++){
+                ajouterElem(elems.get(i));
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public String toString(){
         String s = "Contenu de l'étagère";
-        for(Sec elem: etagere){
+        for(Etagere elem: etagere){
             s += elem.toString()+"\n";
         }
         return s;
     }
 
     public static void afficher(){
-        System.out.print(toString);
+        System.out.print(this.toString());
     }
 }
