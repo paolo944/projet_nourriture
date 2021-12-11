@@ -13,4 +13,7 @@ public class Boisson implements Frais {
     public void unVerre(double litre){
         this.litre=-litre;
     }
+    public double getPoids(){
+        return this.poids;
+    }
 }
