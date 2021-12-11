@@ -66,7 +66,7 @@ public class Frigo {
 
     public Frigo clone(){
         //Retourne un clone du frigo
-        Frigo frigoNouveau = this(poidsMax);
+        Frigo frigoNouveau = new Frigo(this.poidsMax);
         frigoNouveau.ajouterListe(frigo);
         return frigoNouveau;
     }
