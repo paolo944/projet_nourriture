@@ -15,6 +15,6 @@ public abstract class Nourriture{
     }
 
     public String toString(){
-        return nom+", poids: "+poids+"kg"+" quantités: "+quantites;
+        return nom+", poids: "+poids+" kg"+" quantités: "+quantites;
     }
 }
