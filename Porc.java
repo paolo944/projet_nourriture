@@ -4,4 +4,8 @@ public class Porc extends Viande{
         super(poids,nom,quantites,callories,prix);
         this.Morceau=Morceau;
     }
+    public String toString(){
+        String S=this.getCallo()+" callories pour "+this.getPoids()+" kg de "+this.Morceau+"de Porc";
+        return S;
+    }
 }

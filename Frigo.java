@@ -4,7 +4,7 @@ public class Frigo {
     private ArrayList<Frais> frigo = new ArrayList<Frais>();
     private double poidsMax; //poids maximum que le frigo peut acceuillir
     private static int compteur = 0; //Nombre de frigo instanciés
-
+    private int id;
     public Frigo(double poidsMax){
         //définir le poids maximal que le frigo peut acceuillir
         this.poidsMax = poidsMax;
@@ -30,7 +30,7 @@ public class Frigo {
     }
 
     public boolean ajouterListe(Frais[] elems){
-        //ajouter un liste d'élément
+        //ajouter une liste d'élément
         double poidsTotal = 0;
         for(Frais elem: elems){
             poidsTotal += elem.getPoids();
@@ -69,6 +69,14 @@ public class Frigo {
         Frigo frigoNouveau = new Frigo(this.poidsMax);
         frigoNouveau.ajouterListe(frigo);
         return frigoNouveau;
+    }
+
+    public String toString(){
+        String S="Frigo "+this.id+" "+"qui contient ";
+        for(int i=0; i<this.frigo.size(); i++){
+           S=S+(frigo.get(i)).toString();
+        }
+        return S;
     }
 
     public void afficher(){

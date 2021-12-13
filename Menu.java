@@ -18,8 +18,11 @@ public class Menu {
         }
         return s;
     }
+    public void callorie(){
+        System.out.println("Ce menu vaut "+this.caloMenue+" callories.");
+    }
     public void manger(){
-        System.out.println("Le menu "+this.nomMenue+" est mangé");
+        System.out.println("Le menu "+this.nomMenue+" est mangé.");
     }
     
 }
