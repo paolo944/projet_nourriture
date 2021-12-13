@@ -26,5 +26,6 @@ public class CuisineTest {
         repasPasEquilibr.callorie();
         repasPasEquilibr.manger();
         repasPasEquilibr.manger();
+        Accompagnement riz = new Accompagnement(10, "riz", 10, 50, 5) ;
     }
 }

@@ -1,5 +1,5 @@
-public class Gateaux  extends Nourriture implements Sec {
-    public Gateaux(double poids, String nom, int quantites,double callories, double prix){
+public class Accompagnement extends Nourriture implements Sec {
+    public Accompagnement(double poids, String nom, int quantites,double callories, double prix){
         super(poids,nom,quantites,callories,prix);
     }
     public String toString(){
@@ -7,3 +7,4 @@ public class Gateaux  extends Nourriture implements Sec {
         return S;
     }
 }
+
