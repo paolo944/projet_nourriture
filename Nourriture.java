@@ -25,4 +25,16 @@ public abstract class Nourriture{
     public String toString(){
         return nom+", poids: "+poids+" kg"+" quantités: "+quantites;
     }
+
+    public double getPrix(){
+        return prix;
+    }
+
+    public void setQuantites(int quantites){
+        this.quantites += quantites;
+    }
+
+    public String getNom(){
+        return Nom;
+    }
 }
