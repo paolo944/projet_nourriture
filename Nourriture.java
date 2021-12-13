@@ -15,6 +15,9 @@ public abstract class Nourriture{
     public double getPoids(){
         return poids;
     }
+    public double getCallo(){
+        return calories;
+    }
 
     public String toString(){
         return nom+", poids: "+poids+" kg"+" quantités: "+quantites;
