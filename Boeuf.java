@@ -5,7 +5,7 @@ public class Boeuf extends Viande{
         this.Morceau=Morceau;
     }
     public String toString(){
-        String S=this.getCallo()+" callories par kilo pour "+this.getPoids()+" kg de "+this.Morceau+"de Boeuf";
+        String S=this.getPoids()+" kg de "+this.Morceau+"de Boeuf avec "+this.getCallo()+" calories par Kilo";
         return S;
     }
 }
