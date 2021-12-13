@@ -3,10 +3,14 @@ import java.util.ArrayList;
 public class Etagere {
     private ArrayList<Etagere> etagere = new ArrayList<Etagere>();
     private double poidsMax;
+    private static int compteur = 0; 
+    public int id;
 
     public Etagere(double poidsMax){
         //définir le poids maximal que l'étagère peut acceuillir
         this.poidsMax = poidsMax;
+        this.compteur+=1;
+        this.id=compteur;
     }
 
     public ArrayList<Etagere> getEtagere(){
@@ -63,11 +67,11 @@ public class Etagere {
     }
 
     public String toString(){
-        String s = "Contenu de l'étagère";
+        String S="Etagere "+this.id+" "+"qui contient \n"; 
         for(Etagere elem: etagere){
-            s += elem.toString()+"\n";
+            S += elem.toString()+"\n";
         }
-        return s;
+        return S;
     }
 
     public void afficher(){

@@ -17,4 +17,14 @@ class Cuisine{
     public static void  ajouterEtagere(Etagere etageR){
         etagereList.add(etageR);
     }
+    public String toString(){
+        String S="Cuisine composé de \n";
+        for(int i=0; i<frigoList.size(); i++){
+           S+=(frigoList.get(i)).toString()+"\n";
+        }
+        for(int i=0; i<etagereList.size(); i++){
+            S+=(etagereList.get(i)).toString()+"\n";
+         }
+        return S;
+    }
 }

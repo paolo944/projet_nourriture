@@ -6,7 +6,7 @@ public class Menu {
     public boolean pasEncoreMange;
     public Menu(String nomMenue){
         this.caloMenue=0;
-        this.nomMenue=nomMenue
+        this.nomMenue=nomMenue;
         this.pasEncoreMange=false;
     }
     public void ajouterMenu(Nourriture[] nourri,Boisson[] boisso){
@@ -24,8 +24,13 @@ public class Menu {
         System.out.println("Ce menu vaut "+this.caloMenue+" callories.");
     }
     public void manger(){
-        System.out.println("Le menu "+this.nomMenue+" est mangé.");
-
+        if (this.pasEncoreMange=false){
+            System.out.println("Le menu "+this.nomMenue+" est mangé.");
+            this.pasEncoreMange=true;
+        }
+        else{
+            System.out.println("Le menu "+this.nomMenue+"a deja été manger !");
+        }
     }
     
 }

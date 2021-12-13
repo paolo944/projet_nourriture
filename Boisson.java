@@ -17,7 +17,6 @@ public class Boisson implements Frais {
         return this.poids;
     }
     public String toString(){
-        String S=this.litre+" L de "+this.nom+" avec "+this.calories+" calories par Litre";
-        return S;
+        return this.litre+" L de "+this.nom+" avec "+this.calories+" calories par Litre";
     }
 }

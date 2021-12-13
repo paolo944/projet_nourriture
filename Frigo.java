@@ -9,6 +9,7 @@ public class Frigo {
         //définir le poids maximal que le frigo peut acceuillir
         this.poidsMax = poidsMax;
         compteur++;
+        this.id=compteur;
     }
 
     public double getPoids(){
