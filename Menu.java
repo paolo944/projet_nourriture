@@ -3,9 +3,11 @@ public class Menu {
     public Nourriture [] nourrituresTab;
     public Boisson [] boissonTab;
     public double caloMenue;
+    public boolean pasEncoreMange;
     public Menu(String nomMenue){
         this.caloMenue=0;
-        this.nomMenue=nomMenue;
+        this.nomMenue=nomMenue
+        this.pasEncoreMange=false;
     }
     public void ajouterMenu(Nourriture[] nourri,Boisson[] boisso){
         this.nourrituresTab=nourri;
@@ -23,6 +25,7 @@ public class Menu {
     }
     public void manger(){
         System.out.println("Le menu "+this.nomMenue+" est mangé.");
+
     }
     
 }
