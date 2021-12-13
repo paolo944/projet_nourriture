@@ -72,9 +72,9 @@ public class Frigo {
     }
 
     public String toString(){
-        String S="Frigo "+this.id+" "+"qui contient ";
-        for(int i=0; i<this.frigo.size(); i++){
-           S=S+(frigo.get(i)).toString();
+        String S="Frigo "+this.id+" "+"qui contient \n";
+        for(int i=0; i<frigo.size(); i++){
+           S+=(frigo.get(i)).toString()+"\n";
         }
         return S;
     }
