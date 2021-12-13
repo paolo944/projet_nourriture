@@ -7,7 +7,7 @@ public class Menu {
     public Menu(String nomMenue){
         this.caloMenue=0;
         this.nomMenue=nomMenue;
-        this.pasEncoreMange=false;
+        this.pasEncoreMange=true;
     }
     public void ajouterMenu(Nourriture[] nourri,Boisson[] boisso){
         this.nourrituresTab=nourri;
@@ -21,16 +21,21 @@ public class Menu {
         return s;
     }
     public void callorie(){
+        for(int i=0;i<nourrituresTab.length;i++){
+            this.caloMenue+=(this.nourrituresTab[i].getCallo())*(this.nourrituresTab[i].getPoids());
+        }
+        for(int i=0;i<boissonTab.length;i++){
+            this.caloMenue+=(this.boissonTab[i].getCallo())*(this.boissonTab[i].getPoids());
+        }
         System.out.println("Ce menu vaut "+this.caloMenue+" callories.");
     }
     public void manger(){
-        if (this.pasEncoreMange=false){
-            System.out.println("Le menu "+this.nomMenue+" est mangé.");
-            this.pasEncoreMange=true;
+        if(this.pasEncoreMange){
+            this.pasEncoreMange=false
+            ;System.out.println("Le menu "+this.nomMenue+" est mangé.");
         }
-        else{
-            System.out.println("Le menu "+this.nomMenue+"a deja été manger !");
+        else {
+            System.out.println("Le menu "+this.nomMenue+" a deja été manger !");
         }
-    }
-    
+    }    
 }

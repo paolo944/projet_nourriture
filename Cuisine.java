@@ -27,4 +27,7 @@ class Cuisine{
          }
         return S;
     }
+    public void afficher(){
+        System.out.println(this.toString());
+    }
 }

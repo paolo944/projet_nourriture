@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Etagere {
-    private ArrayList<Etagere> etagere = new ArrayList<Etagere>();
+    private ArrayList<Sec> etagere = new ArrayList<Sec>();
     private double poidsMax;
     private static int compteur = 0; 
     public int id;
@@ -13,7 +13,7 @@ public class Etagere {
         this.id=compteur;
     }
 
-    public ArrayList<Etagere> getEtagere(){
+    public ArrayList<Sec> getEtagere(){
         //récupérer la référence du frigo et le manipuler dans le client
         return etagere;
     }
@@ -30,7 +30,7 @@ public class Etagere {
     public boolean ajouterElem(Sec elem){
         //ajouter un seul élément
         if(elem.getPoids()+getPoids() <= poidsMax) {
-            etagere.add((Etagere) elem);
+            etagere.add( elem);
             return true;
         }
         return false;
@@ -68,7 +68,7 @@ public class Etagere {
 
     public String toString(){
         String S="Etagere "+this.id+" "+"qui contient \n"; 
-        for(Etagere elem: etagere){
+        for(Sec elem: etagere){
             S += elem.toString()+"\n";
         }
         return S;

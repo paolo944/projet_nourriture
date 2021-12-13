@@ -5,13 +5,16 @@ public abstract class Nourriture{
         private double calories;
         private double prix;
     
-    public Nourriture(double poids, String nom, int quantites, double calories, double prix){
+    protected Nourriture(double poids, String nom, int quantites, double calories, double prix){
         this.poids = poids;
         this.nom = nom;
         this.quantites = quantites;
         this.calories = calories;
         this.prix = prix;
         }
+    public String getNom(){
+        return this.nom;
+    }
     public double getPoids(){
         return poids;
     }
