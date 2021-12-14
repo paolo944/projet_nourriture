@@ -1,9 +1,9 @@
 public class Menu {
-    public String nomMenue; //Nom du menu
-    public Nourriture [] nourrituresTab; //Liste de nourriture
-    public Boisson [] boissonTab; //Liste de boisson
-    public double caloMenue; //Nombre de calories
-    public boolean pasEncoreMange; //Boolean si le menu est mangé
+    private String nomMenue; //Nom du menu
+    private Nourriture [] nourrituresTab; //Liste de nourriture
+    private Boisson [] boissonTab; //Liste de boisson
+    private double caloMenue; //Nombre de calories
+    private boolean pasEncoreMange; //Boolean si le menu est mangé
 
     public Menu(String nomMenue){
         this.caloMenue=0;
