@@ -1,5 +1,5 @@
 public class Porc extends Viande{
-    public String Morceau;
+    public String Morceau; //Nom du morceau
     public Porc(double poids, String nom, int quantites,double callories, double prix){
         super(poids,nom,quantites,callories,prix);
         this.Morceau=Morceau;
