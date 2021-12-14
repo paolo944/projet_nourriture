@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Etagere {
-    private ArrayList<Sec> etagere = new ArrayList<Sec>();
-    private double poidsMax;
-    private static int compteur = 0; 
-    public int id;
+    private ArrayList<Sec> etagere = new ArrayList<Sec>(); //Liste des éléments contenu dans étagère
+    private double poidsMax; //Poids max de l'étagère
+    private static int compteur = 0;  //Compteur du nombre d'étagère
+    public int id; //Identifiant de l'étagère
 
     public Etagere(double poidsMax){
         //définir le poids maximal que l'étagère peut acceuillir
@@ -29,20 +29,23 @@ public class Etagere {
 
     public boolean ajouterElem(Sec elem){
         //ajouter un seul élément
-        if(elem.getPoids()+getPoids() <= poidsMax) {
+        if(elem.getPoids()+getPoids() <= poidsMax) { //Regarde si le poids de l'élément + poids actuel est supérieur au poids max
             etagere.add( elem);
             return true;
         }
         return false;
     }
 
-    public boolean ajouterListe(Sec[] elems){
+    public boolean ajouterListe(Sec[] elems) throws PoidsException{
         //ajouter un liste d'élément
         double poidsTotal = 0;
         for(Sec elem: elems){
             poidsTotal += elem.getPoids();
         }
-        if(poidsTotal <= poidsMax){
+        if(poidsTotal > poidsMax){//Regarde si le poids de l'élément + poids actuel est supérieur au poids max
+            throw new PoidsException("Le poids est trop élevé");
+        }
+        else{
             for(Sec elem: elems){
                 ajouterElem(elem);
             }
@@ -51,13 +54,16 @@ public class Etagere {
         return false;
     }
 
-    public boolean ajouterListe(ArrayList<Sec> elems){
-        //ajouter un liste d'élément
+    public boolean ajouterListe(ArrayList<Sec> elems) throws PoidsException{
+        //ajouter un Arrayliste d'élément
         double poidsTotal = 0;
         for(int i=0; i<elems.size(); i++){
             poidsTotal += elems.get(i).getPoids();
         }
-        if(poidsTotal <= poidsMax){
+        if(poidsTotal > poidsMax){//Regarde si le poids de l'élément + poids actuel est supérieur au poids max
+            throw new PoidsException("Le poids est trop élevé");
+        }
+        else{
             for(int i=0; i<elems.size(); i++){
                 ajouterElem(elems.get(i));
             }
@@ -74,7 +80,15 @@ public class Etagere {
         return S;
     }
 
+    public Etagere clone(){
+        //Retourne un clone du frigo
+        Etagere etagereNouveau = new Etagere(this.poidsMax);
+        etagereNouveau.ajouterListe(etagere);
+        return etagereNouveau;
+    }
+
     public void afficher(){
+        //Affiche toString()
         System.out.print(this.toString());
     }
     

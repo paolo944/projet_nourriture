@@ -1,18 +1,22 @@
 public class Menu {
-    public String nomMenue;
-    public Nourriture [] nourrituresTab;
-    public Boisson [] boissonTab;
-    public double caloMenue;
-    public boolean pasEncoreMange;
+    private String nomMenue; //Nom du menu
+    private Nourriture [] nourrituresTab; //Liste de nourriture
+    private Boisson [] boissonTab; //Liste de boisson
+    private double caloMenue; //Nombre de calories
+    private boolean pasEncoreMange; //Boolean si le menu est mangé
+
     public Menu(String nomMenue){
         this.caloMenue=0;
         this.nomMenue=nomMenue;
         this.pasEncoreMange=true;
     }
+
     public void ajouterMenu(Nourriture[] nourri,Boisson[] boisso){
+        //Ajoute dans le menu des nourriture et des boissons.
         this.nourrituresTab=nourri;
         this.boissonTab=boisso;
     }
+
     public String toString() {
         String s="";
         for (int i=0;i<=this.nourrituresTab.length;i++){
@@ -20,7 +24,9 @@ public class Menu {
         }
         return s;
     }
+
     public void callorie(){
+        //Calcul le nombre de calories
         for(int i=0;i<nourrituresTab.length;i++){
             this.caloMenue+=(this.nourrituresTab[i].getCallo())*(this.nourrituresTab[i].getPoids());
         }
@@ -30,6 +36,7 @@ public class Menu {
         System.out.println("Ce menu vaut "+this.caloMenue+" callories.");
     }
     public void manger(){
+        //Manger le menu
         if(this.pasEncoreMange){
             this.pasEncoreMange=false
             ;System.out.println("Le menu "+this.nomMenue+" est mangé.");

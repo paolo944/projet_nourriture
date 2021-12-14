@@ -31,6 +31,10 @@ public class Boisson implements Frais {
         return prix;
     }
 
+    public double getCalories(){
+        return calories;
+    }
+
     public String getNom(){
         return nom;
     }

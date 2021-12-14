@@ -1,8 +1,6 @@
 public class Magasin{
     private String nom; //Nom de l'enseigne
     private double differencePrix; //Diffèrence de prix de l'enseigne
-    private double prixTotal = 0;
-    private ArrayList<>
 
     public Magasin(String nom, double differencePrix){
         this.nom = nom;
@@ -16,6 +14,7 @@ public class Magasin{
     }
 
     public double course(Boisson boisson, double litre){
+        //Fais les courses et achète quantité de boisson
         boisson.setLitre(litre);
         System.out.println("Vous avez achetez "+litre+" litre de "+boisson.getNom()+" pour "+litre*boisson.getPrix()*differencePrix+" euros");
         return litre*boisson.getPrix()*differencePrix;
@@ -29,6 +28,7 @@ public class Magasin{
     }
 
     public double coursePrix(Boisson boisson, double prix){
+        //Fais les courses et achète pour prix de boisson
         double litre = prix/boisson.getPrix();
         boisson.setLitre(litre);
         System.out.println("Vous avez achete "+litre+"litre de "+boisson.getNom());

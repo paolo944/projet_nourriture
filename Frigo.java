@@ -4,7 +4,7 @@ public class Frigo {
     private ArrayList<Frais> frigo = new ArrayList<Frais>();
     private double poidsMax; //poids maximum que le frigo peut acceuillir
     private static int compteur = 0; //Nombre de frigo instanciés
-    private int id;
+    private int id; //Identifiant du Frigo
     public Frigo(double poidsMax){
         //définir le poids maximal que le frigo peut acceuillir
         this.poidsMax = poidsMax;
@@ -23,20 +23,23 @@ public class Frigo {
 
     public boolean ajouterElem(Frais elem){
         //ajouter un seul élément
-        if(elem.getPoids()+getPoids() <= poidsMax) {
+        if(elem.getPoids()+getPoids() <= poidsMax) { //Regarde si le poids de l'élément + poids actuel est supérieur au poids max
             frigo.add(elem);
             return true;
         }
         return false;
     }
 
-    public boolean ajouterListe(Frais[] elems){
+    public boolean ajouterListe(Frais[] elems) throws PoidsException{
         //ajouter une liste d'élément
         double poidsTotal = 0;
         for(Frais elem: elems){
             poidsTotal += elem.getPoids();
         }
-        if(poidsTotal <= poidsMax){
+        if(poidsTotal > poidsMax){ //Regarde si le poids de l'élément + poids actuel est supérieur au poids max
+            throw new PoidsException("Poids Trop élevé");
+        }
+        else{
             for(Frais elem: elems){
                 ajouterElem(elem);
             }
@@ -45,13 +48,16 @@ public class Frigo {
         return false;
     }
 
-    public boolean ajouterListe(ArrayList<Frais> elems){
-        //ajouter un liste d'élément
+    public boolean ajouterListe(ArrayList<Frais> elems) throws PoidsException{
+        //ajouter un ArrayListe d'élément
         double poidsTotal = 0;
         for(int i=0; i<elems.size(); i++){
             poidsTotal += elems.get(i).getPoids();
         }
-        if(poidsTotal <= poidsMax){
+        if(poidsTotal > poidsMax){ //Regarde si le poids de l'élément + poids actuel est supérieur au poids max
+            throw new PoidsException("Le poids est trop élevé");
+        }
+        else{
             for(int i=0; i<elems.size(); i++){
                 ajouterElem(elems.get(i));
             }
