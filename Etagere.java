@@ -51,7 +51,6 @@ public class Etagere {
             }
             return true;
         }
-        return false;
     }
 
     public boolean ajouterListe(ArrayList<Sec> elems) throws PoidsException{
@@ -69,7 +68,6 @@ public class Etagere {
             }
             return true;
         }
-        return false;
     }
 
     public String toString(){
@@ -83,7 +81,9 @@ public class Etagere {
     public Etagere clone(){
         //Retourne un clone du frigo
         Etagere etagereNouveau = new Etagere(this.poidsMax);
-        etagereNouveau.ajouterListe(etagere);
+        try {
+            etagereNouveau.ajouterListe(etagere);
+        } catch (PoidsException e){}
         return etagereNouveau;
     }
 

@@ -45,7 +45,6 @@ public class Frigo {
             }
             return true;
         }
-        return false;
     }
 
     public boolean ajouterListe(ArrayList<Frais> elems) throws PoidsException{
@@ -63,7 +62,6 @@ public class Frigo {
             }
             return true;
         }
-        return false;
     }
 
     public static int getNombreFirgo(){
@@ -74,7 +72,9 @@ public class Frigo {
     public Frigo clone(){
         //Retourne un clone du frigo
         Frigo frigoNouveau = new Frigo(this.poidsMax);
-        frigoNouveau.ajouterListe(frigo);
+        try {
+            frigoNouveau.ajouterListe(frigo);
+        } catch (PoidsException e){}
         return frigoNouveau;
     }
 

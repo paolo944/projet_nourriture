@@ -8,21 +8,18 @@ public class Magasin{
     }
 
     public double course(Nourriture nourriture, int quantite){
-        nourriture.setQuantites(quantite);
         System.out.println("Vous avez achetez "+quantite+" de "+nourriture.getNom()+" pour "+quantite*nourriture.getPrix()*this.differencePrix+" euros");
-        return quantite*nourriture.getPrix()*differencePrix;
+        return quantite;
     }
 
     public double course(Boisson boisson, double litre){
         //Fais les courses et achète quantité de boisson
-        boisson.setLitre(litre);
         System.out.println("Vous avez achetez "+litre+" litre de "+boisson.getNom()+" pour "+litre*boisson.getPrix()*differencePrix+" euros");
-        return litre*boisson.getPrix()*differencePrix;
+        return litre;
     }
 
     public int coursePrix(Nourriture nourriture, double prix){
         int quantite = (int) (prix%nourriture.getPrix());
-        nourriture.setQuantites(quantite);
         System.out.println("Vous avez achete "+quantite+"de "+nourriture.getNom());
         return quantite;
     }

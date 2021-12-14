@@ -34,8 +34,9 @@ public abstract class Nourriture{
         return prix;
     }
 
-    public void setQuantites(int quantites){
+    public void setQuantites(double quantites){
         //Défini les quantités en plus
+        this.poids+=(this.poids/this.quantites)*quantites;
         this.quantites += quantites;
     }
 

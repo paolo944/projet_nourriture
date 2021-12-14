@@ -6,7 +6,7 @@ public class Boisson implements Frais {
     private double calories;
     private double prix;
 
-    public Boisson(String nom, boolean gazeux, double litre,double calories,Frigo f1, double prix){
+    public Boisson(String nom, boolean gazeux, double litre,double calories, double prix){
         this.litre=litre;
         this.poids=litre;
         this.nom=nom;
@@ -40,5 +40,13 @@ public class Boisson implements Frais {
     }
     public double getCallo(){
         return this.calories;
+    }
+    public String toString(){
+        return this.litre+" L de "+this.nom+" avec "+this.calories+" calories par Litre";
+    }
+    public void setQuantites(double quantites){
+        //Défini les quantités en plus
+        this.poids+=quantites;
+        this.litre += quantites;
     }
 }
