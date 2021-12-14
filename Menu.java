@@ -41,7 +41,7 @@ public class Menu {
             this.pasEncoreMange=false
             ;System.out.println("Le menu "+this.nomMenue+" est mangé.");
         }
-        else {
+        else {  //si le menu est déja mangé:
             System.out.println("Le menu "+this.nomMenue+" a deja été manger !");
         }
     }    

@@ -23,12 +23,23 @@ public class CuisineTest {
         repasPasEquilibr.callorie();
         repasPasEquilibr.manger();
         repasPasEquilibr.manger();
+        Frigo F2=frigo1.clone();
+        Etagere EtagR2= EtagR1.clone();
+        Boisson perrierBoisson = new Boisson("perrier", true , 5, 0, 15);
+        frigo1.afficher();
+        F2.afficher();
+        F2.ajouterElem(perrierBoisson);
+        F2.afficher();
 
-        System.out.println("\n");
+
+
         System.out.println(cotellettAgneau.toString());
         Magasin Carrefour = new Magasin("Carrefour",1);
         cotellettAgneau.setQuantites(Carrefour.course(cotellettAgneau, 25));
         System.out.println(cotellettAgneau.toString());
+        System.out.println("\n");
+
+        System.out.println("\n");
         System.out.println(coca.toString());
         coca.setQuantites(Carrefour.course(coca,15));
         System.out.println(coca.toString());
