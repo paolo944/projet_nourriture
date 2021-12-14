@@ -1,10 +1,10 @@
 public class Boisson implements Frais {
-    public double litre;
-    public boolean gazeux;
-    public String nom;
-    public double poids;
-    public double calories;
-    public double prix;
+    private double litre;
+    private boolean gazeux;
+    private String nom;
+    private double poids;
+    private double calories;
+    private double prix;
 
     public Boisson(String nom, boolean gazeux, double litre,double calories,Frigo f1, double prix){
         this.litre=litre;
@@ -33,5 +33,8 @@ public class Boisson implements Frais {
 
     public String getNom(){
         return nom;
+    }
+    public double getCallo(){
+        return this.calories;
     }
 }

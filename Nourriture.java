@@ -34,7 +34,4 @@ public abstract class Nourriture{
         this.quantites += quantites;
     }
 
-    public String getNom(){
-        return Nom;
-    }
 }
