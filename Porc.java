@@ -5,7 +5,6 @@ public class Porc extends Viande{
         this.Morceau=Morceau;
     }
     public String toString(){
-        String S=this.getPoids()+" kg de "+this.Morceau+"de Porc avec "+this.getCallo()+" calories par Kilo";
-        return S;
+        return this.getPoids()+" kg de "+this.Morceau+"de Porc avec "+this.getCallo()+" calories par Kilo";
     }
 }

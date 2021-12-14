@@ -14,15 +14,16 @@ public class Boisson implements Frais {
         this.prix = prix;
     }
 
-    public void unVerre(double litre){
-        this.litre=-litre;
+    public void unVerre(double litre){ //Boit un verre de X litre et retire X litre à la quantié de Boisson
+        this.litre-=litre;
+        System.out.println("Un verre de "+litre+" de "+this.nom+" est bu");
     }
 
     public double getPoids(){
         return this.poids;
     }
 
-    public void setLitre(double litre){
+    public void setLitre(double litre){     //pour rajouter X litres, on rajoute X litres et X kilo (1kg=1L)
         this.litre += litre;
         this.poids += litre;
     }

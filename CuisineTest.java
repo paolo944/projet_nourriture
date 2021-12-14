@@ -32,6 +32,9 @@ public class CuisineTest {
         System.out.println(coca.toString());
         coca.setQuantites(Carrefour.course(coca,15));
         System.out.println(coca.toString());
+        coca.unVerre(15);
+        System.out.println(coca.toString());
+
 
     }
 }
